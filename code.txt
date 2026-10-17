@@ -1,0 +1,14 @@
+Please implement the optimal solution according to these technical requirements:
+- Target Language: C++
+- Algorithmic Approach: Mathematical Reversal of the Half-Number (avoiding string conversion and 32-bit integer overflow)
+- Data Structures & Variables:
+  * int x: Input integer to check
+  * int reversed_half = 0: Stores the reversed lower half of the digits of x
+- Step-by-Step Logic:
+  * Step 1 (Initialization): Check negative numbers and trailing zeros: if x < 0, or if x % 10 == 0 and x != 0, return false immediately.
+  * Step 2 (Traversal & Transitions): Loop while x > reversed_half. In each iteration, append the last digit of x to reversed_half via reversed_half = reversed_half * 10 + (x % 10), then truncate the last digit from x via x /= 10.
+  * Step 3 (Completion): Return true if x == reversed_half (even length palindrome) or x == reversed_half / 10 (odd length palindrome where the middle digit is discarded), otherwise return false.
+- Edge Cases Handled: Negative integers (e.g., -121), non-zero multiples of 10 (e.g., 10, 100), single-digit numbers (0-9 are palindromic), integer overflow prevention by only reversing half the digits.
+- Complexity Constraints: Target Time: O(log10(x)), Space: O(1)
+Provide the complete, clean code directly without explanations.
+
